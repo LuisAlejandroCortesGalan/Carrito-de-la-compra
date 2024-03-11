@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="css/estils.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Carrito de la compra</h1>
+
+        <div id="presentacio">
+            <h2>Aplicación para comprar fruta</h2>
+            <p>Elige la fruta que deseas haciendo click sobre su imagen.</p>
+
+        </div>
+    </header>
+    <main class="container">
+
+        <section class="productes" id="section">
+            <div class="div-fruta" onclick="compra('Pomelo', 2.50)">     
+                <img loading="lazy" class="imatges" src="img/aranja.png" alt="Aranja" value="Pomelo">
+                <p id="precio-pomelo">Pomelo : 2,50€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Kiwi', 4.20)">
+                <img class="imatges" src="img/kiwi.png" alt="Kiwi" value="Kiwi">
+                <p id="precio-kiwi">Kiwi : 4,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('limon', 1.20)">
+                <img class="imatges" src="img/llimones.png" alt="Llimones" value="Limón">
+                <p id="precio-limon">Limón : 1,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('piña', 2.80)">
+                <img class="imatges" src="img/pinya.png" alt="Pinya" value="piña">
+                <p id="precio-piña">Piña : 2.80€/ud</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Sandia', 1.20)">
+                <img class="imatges" src="img/sindria.png" alt="Sindria" value="Sandía">
+                <p id="precio-sandia">Sandía: 1,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Aguacate', 2.50)">
+                <img class="imatges" src="img/aguacates.jpg" alt="Aguacates" value="Aguacate">
+                <p id="precio-aguacate">Aguacate : 2,50€/ud</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Fresón', 6.20)"> 
+                <img class="imatges" src="img/freson.jpg" alt="Fresón" value="Fresón">
+                <p id="precio-freson">Fresón : 6,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Mandarina', 1.90)">
+                <img class="imatges" src="img/mandarina.jpg" alt="Mandarina" value="Mandarina">
+                <p id="precio-mandarina">Mandarina : 1,90€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Manzana Fuji', 4.20)">
+                <img class="imatges" src="img/manzana_fuji.jpg" alt="Manzana Fuji" value="Manzana Fuji">
+                <p id="precio-manzana-fuji">Manzana Fuji : 4,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Plátanos', 3.20)">
+                <img class="imatges" src="img/platans.png" alt="Plátanos" value="Plátanos">
+                <p id="precio-platanos">Plátanos: 3,20€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Pera', 1.80)">
+                <img class="imatges" src="img/pera.jpg" alt="Pera" value="Pera">
+                <p id="precio-pera">Pera : 1,80€/kg</p>
+            </div>
+            <div class="div-fruta" onclick="compra('Manzana Golden', 3.50)">
+                <img class="imatges" src="img/manzana_golden.jpg" alt="Manzana Golden" value="Manzana Golden">
+                <p id="precio-manazana.golden">Manzana Golden: 3,50€/kg</p>
+            </div>
+        </section>
+
+
+        <section>
+            <!-- <h2>Total carrito:</h2> -->
+            <div id="totalCompra"><span id="total"><i class="fas fa-shopping-cart fa-sm"></i>  Total Compra: <span id="preuFinal">0,00€</span></span></div>
+            <p id="carrito"></p>
+
+        </section>
+    </main>
+
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>
