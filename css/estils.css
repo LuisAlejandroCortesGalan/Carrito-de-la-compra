@@ -115,15 +115,9 @@ p {
 
 
 #carrito {
-    font-size: 12px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    flex-direction: column;
-    gap: 20px;
+    text-align: right;
+    font-weight: 500;
 }
 
-.fa-solid {
-    color: red;
-}
