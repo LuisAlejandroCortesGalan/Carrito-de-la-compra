@@ -27,9 +27,10 @@ Recuerda la importancia comentar con detalle el código.
  */
  let totalAbsoluto = 0 //aqui guardamos el total de la compra
  let guardarCompra = [];    //aqui guardamos todos los elementos de la compra
- 
+ let precioFinal = document.getElementById("preuFinal"); //aqui obtenemos el lugar donde aparecera el total 
+
+
  function compra(nombre, precio) {
-     let precioFinal = document.getElementById("preuFinal"); //aqui obtenemos el lugar donde aparecera el total  
      let cantidad = Number(prompt(`¿Que cantidad de ${nombre} desea?`)); //aqui obtenemos la cantidad de cada elemento de la compra
      if (isNaN(cantidad) || cantidad == 0) { //si no es un numero entonces introduce un valor numerico y para a la función
          alert("Introduce un valor numerico")
@@ -53,6 +54,7 @@ Recuerda la importancia comentar con detalle el código.
      guardarCompra.push(objeto);
 
 
+     
     //mostrar en el carrito
     document.getElementById("carrito").innerHTML +=  `<p id='${objeto.id}'><i class="borrar fa-solid fa-trash-can"></i>  ${nombre}  ${cantidad}  X  ${precio} €/kg =  ${PrecioAbsoluto} € <br></p>`;
     console.log("ver el array de compra", guardarCompra);
@@ -63,25 +65,25 @@ Recuerda la importancia comentar con detalle el código.
      for (let i = 0; i < guardarCompra.length; i++) { //aqui iteramos sobre los elementos de la compra guardados para buscar el id
         var compra = guardarCompra[i].id;        
      }
-     const removerProductoBtn = document.getElementsByClassName("fa-solid");
 
-     for (let i = 0; i < removerProductoBtn.length; i++) {
-         removerProductoBtn[i].addEventListener("click", (event) => {
-             event.target.parentElement.remove();
-     
-             // Obtener el precio absoluto del producto eliminado
-             let PrecioAbsoluto = parseFloat(event.target.parentElement.querySelector("precioAbsoluto"));
-     
-             // Restar el precio absoluto del producto eliminado del total absoluto
-             totalAbsoluto -= PrecioAbsoluto;
-     
-             // Mostrar el nuevo total con dos decimales
-             let precioFinal = document.getElementById("preuFinal");
-             precioFinal.innerHTML = totalAbsoluto.toFixed(2);
-         });
-     }
-     
-     // Mostrar el precio total inicial con dos decimales
-    //  let precioFinal = document.getElementById("preuFinal");
-    //  precioFinal.innerHTML = totalAbsoluto.toFixed(2);
+     let totalResta = 0;
+     const removerProductoBtn = document.getElementsByClassName("fa-solid"); // aqui buscamos el elemento de la papelera
+     for (let i = 0; i < removerProductoBtn.length; i++) { //creamos un bucle for para iterar sobre los elementos de la papelera
+        removerProductoBtn[i].addEventListener("click", (event) => { //creamos a partir de la elemento de la papelera un evento de escuchar el click
+            event.target.parentElement.remove(); //buscamos el parent element para borrar
+            
+            console.log("vamos a ver en consola el precio final", precioFinal); 
+            console.log(objeto);
+            totalResta = totalAbsoluto - Number(objeto.precio);//resto del total el precio del producto quitado
+            console.log(`vamos a ver como se resta`, typeof(precioFinal));
+            console.log("menos", objeto.precio);
+            console.log("mostrar el resultado de la resta", typeof(totalResta));
+           
+    })
+     precioFinal.innerHTML = totalResta; //aqui ponemos solo dos decimales del precio
+     let totalDosDecimales = totalAbsoluto.toFixed(2);   //aqui establecemos dos decimales al precio absoluto
+     precioFinal.innerHTML = totalDosDecimales;  // aqui introducimos al precio absoluto al html
+ 
+
     }
+}
